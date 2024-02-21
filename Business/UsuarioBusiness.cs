@@ -6,9 +6,14 @@ namespace CoderHouseProyectoFinal.Business
 {
     public static class UsuarioBusiness
     {
+        public static List<Usuario> GetAllUsers() 
+        {
+            return UsuarioService.GetAllUsers();
+
+        }
         public static Usuario GetUser(int idUser)
         {
-            return UsuarioBusiness.GetUser(idUser);
+            return UsuarioService.GetUser(idUser);
             
         }
         public static bool CreateUser(Usuario v) 
@@ -19,8 +24,9 @@ namespace CoderHouseProyectoFinal.Business
         {
             return UsuarioService.DeleteUser(id);
         }
-        public static bool UpdateProduct(Usuario u, int id) 
+        public static bool UpdateUser(Usuario u, int id) 
         {
-            return UsuarioService.UpdateProduct(u, id);
+            return UsuarioService.UpdateUser(u, id);
         }
+    }
 }

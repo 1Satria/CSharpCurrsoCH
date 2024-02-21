@@ -8,7 +8,7 @@ namespace CoderHouseProyectoFinal.Business
 
         public static List<ProductoVendido> GetAllSoldProducts() 
         {
-            return ProductoService.GetAllProducts();
+            return ProductoVendidoService.GetAllSoldProducts();
         }
 
         public static ProductoVendido GetSoldProduct(int id) 

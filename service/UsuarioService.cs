@@ -29,6 +29,7 @@ namespace CoderHouseProyectoFinal.service
                 context.SaveChanges();
                 return true;
             }
+            return false;
         }
 
         public static bool DeleteUser(int id)
@@ -49,7 +50,7 @@ namespace CoderHouseProyectoFinal.service
             }
             return false;
         }
-        public static bool UpdateProduct(Usuario u, int id)
+        public static bool UpdateUser(Usuario u, int id)
         {
             using (CoderContext context = new CoderContext())
             {
@@ -65,6 +66,7 @@ namespace CoderHouseProyectoFinal.service
 
             }
         }
+
 
         
 
