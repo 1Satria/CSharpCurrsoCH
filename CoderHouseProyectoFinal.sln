@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoderHouseProyectoFinal", "CoderHouseProyectoFinal.csproj", "{A1408705-268C-4352-901B-BAC7D7DC4D08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoderHouseProyectoFinal", "CoderHouseProyectoFinal.csproj", "{A1408705-268C-4352-901B-BAC7D7DC4D08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frmDesafioCoder", "..\frmDesafioCoder\frmDesafioCoder.csproj", "{B0F239F0-1FC7-4F55-8FBC-CDAF473CF430}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "frmDesafioCoder", "..\frmDesafioCoder\frmDesafioCoder.csproj", "{B0F239F0-1FC7-4F55-8FBC-CDAF473CF430}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

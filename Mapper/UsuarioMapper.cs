@@ -13,7 +13,6 @@ namespace CoderHouseProyectoFinal.Mapper
             userDTO.Nombre = usuario.Nombre;
             userDTO.Contraseña = usuario.Contraseña;
             userDTO.Apellido = usuario.Apellido;
-            userDTO.Id = usuario.Id;
             userDTO.Mail = usuario.Mail;
             return userDTO;
         }
@@ -25,7 +24,6 @@ namespace CoderHouseProyectoFinal.Mapper
             user.Nombre = userDTO.Nombre;
             user.Contraseña = userDTO.Contraseña;
             user.Apellido = userDTO.Apellido;
-            user.Id = userDTO.Id;
             user.Mail = userDTO.Mail;
             return user;
         }

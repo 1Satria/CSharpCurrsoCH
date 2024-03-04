@@ -1,6 +1,8 @@
-﻿using CoderHouseProyectoFinal.database;
+﻿using CoderHouseProyectoFinal.Business;
+using CoderHouseProyectoFinal.database;
 using CoderHouseProyectoFinal.models;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.Intrinsics.X86;
 
 namespace CoderHouseProyectoFinal.service
 {
@@ -21,6 +23,20 @@ namespace CoderHouseProyectoFinal.service
                 return context.Usuarios.Where(u => u.Id == idUser).FirstOrDefault();
             }
         }
+        public static Usuario GetUserByUsername(string userName) 
+        {
+            using (CoderContext context = new CoderContext())
+            {
+                return context.Usuarios.Where(u => u.NombreUsuario == userName).FirstOrDefault();
+            }
+        }
+        public static Usuario ObtenerUsuarioPorUsuarioYPassword(string UserName, string password) 
+        {
+            using (CoderContext context = new CoderContext())
+            {
+                return context.Usuarios.Where(u => u.NombreUsuario == UserName).Where(u => u.Contraseña == password).FirstOrDefault();
+            }
+        }
         public static bool CreateUser(Usuario v)
         {
             using (CoderContext context = new CoderContext())
@@ -36,13 +52,16 @@ namespace CoderHouseProyectoFinal.service
         {
             using (CoderContext context = new CoderContext()) 
             {
-                Usuario usuarioABorrar = context.Usuarios.Include(u => u.Venta).Include(u => u.Productos).Where(u => u.Id == id).FirstOrDefault();
-
-
+                List<int> IdsVentas = new List<int> {};
+                Usuario usuarioABorrar = context.Usuarios.Where(u => u.Id == id).FirstOrDefault();
+                List<Producto> productosABorrar = context.Productos.Include(u => u.ProductoVendidos).Where(u => u.IdUsuario == id).ToList();
+                List<Ventum> ventasaborrar = context.Venta.Include(u => u.ProductoVendidos).Where(u => u.IdUsuario == id).ToList();
+                
                 if (usuarioABorrar is not null) 
                 {
-                    context.Productos.RemoveRange(usuarioABorrar.Productos);
-                    context.Venta.RemoveRange(usuarioABorrar.Venta);
+                    
+                    context.Productos.RemoveRange(productosABorrar);
+                    context.Venta.RemoveRange(ventasaborrar);
                     context.Usuarios.Remove(usuarioABorrar);
                     context.SaveChanges();
                     return true;

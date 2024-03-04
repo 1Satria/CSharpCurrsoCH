@@ -1,4 +1,5 @@
-﻿using CoderHouseProyectoFinal.models;
+﻿using CoderHouseProyectoFinal.DTOs;
+using CoderHouseProyectoFinal.models;
 using CoderHouseProyectoFinal.service;
 
 namespace CoderHouseProyectoFinal.Business
@@ -21,7 +22,7 @@ namespace CoderHouseProyectoFinal.Business
         {
             return VentaService.UpdateVentum(v, id);
         }
-        public static bool CreateVentum(Ventum v) 
+        public static bool CreateVentum(VentumDTO v) 
         {
             return VentaService.CreateVentum(v);
         }

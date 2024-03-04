@@ -23,8 +23,8 @@ namespace CoderHouseProyectoFinal.Controllers
         [HttpPost("AgregarVenta")]
         public IActionResult agregarVenta([FromBody] VentumDTO VentaDTO)
         {
-            Ventum VentaMapeado = VentumMapper.MappearAVentum(VentaDTO);
-            if (VentaBusiness.CreateVentum(VentaMapeado))
+            //Ventum VentaMapeado = VentumMapper.MappearAVentum(VentaDTO);
+            if (VentaBusiness.CreateVentum(VentaDTO))
             {
                 return Ok(new { Menssaje = "Se creo la Venta" });
             }

@@ -2,7 +2,9 @@
 using CoderHouseProyectoFinal.DTOs;
 using CoderHouseProyectoFinal.Mapper;
 using CoderHouseProyectoFinal.models;
+using CoderHouseProyectoFinal.service;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace CoderHouseProyectoFinal.Controllers
 {
@@ -15,11 +17,19 @@ namespace CoderHouseProyectoFinal.Controllers
         {
             return UsuarioBusiness.GetAllUsers();
         }
+
         [HttpGet("GetUsuario/{id}")]
         public Usuario obtenerUsuarioId(int id) 
         {
             return UsuarioBusiness.GetUser(id);
         }
+
+        [HttpGet("GetUsuario/{Username}")]
+        public Usuario obtenerUsuarioId(string Username)
+        {
+            return UsuarioBusiness.GetUserByUsername(Username);
+        }
+
         [HttpPost("AgregarUsuario")]
         public IActionResult agregarUsuario([FromBody]UsuarioDTO userDTO) 
         {
@@ -32,6 +42,24 @@ namespace CoderHouseProyectoFinal.Controllers
             {
                 return base.Conflict(new { Mensaje = "No se creo el usuario" });
             }
+        }
+        [HttpGet("{usuario}/{password}")]
+
+        public ActionResult<Usuario> ObtenerUsuarioPorNombreYPassword(string usuario, string password)
+        {
+            try
+            {
+
+                return UsuarioService.ObtenerUsuarioPorUsuarioYPassword(usuario, password);
+            }
+            catch (Exception ex)
+            {
+                return base.Conflict(new { error = ex.Message, status = HttpStatusCode.InternalServerError });
+            }
+            
+            
+
+
         }
         [HttpDelete("BorrarUsuario/{id}")]
         public IActionResult borrarUsuario(int id) 

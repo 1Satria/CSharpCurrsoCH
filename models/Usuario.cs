@@ -11,7 +11,7 @@ namespace CoderHouseProyectoFinal.models
             Venta = new HashSet<Ventum>();
         }
 
-        public long Id { get; set; }
+        public long Id  { get; set; }
         public string Nombre { get; set; } = null!;
         public string Apellido { get; set; } = null!;
         public string NombreUsuario { get; set; } = null!;

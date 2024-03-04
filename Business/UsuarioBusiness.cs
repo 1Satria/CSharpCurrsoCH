@@ -16,6 +16,10 @@ namespace CoderHouseProyectoFinal.Business
             return UsuarioService.GetUser(idUser);
             
         }
+        public static Usuario GetUserByUsername(string username) 
+        {
+            return UsuarioService.GetUserByUsername(username);
+        }
         public static bool CreateUser(Usuario v) 
         {
             return UsuarioService.CreateUser(v); 

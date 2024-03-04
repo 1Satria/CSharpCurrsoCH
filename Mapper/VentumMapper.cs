@@ -10,7 +10,7 @@ namespace CoderHouseProyectoFinal.Mapper
         {
             Ventum venta = new Ventum();
             venta.Comentarios = ventaDTO.Comentarios;
-            venta.Id = ventaDTO.Id;
+            venta.Id = null;
             venta.IdUsuario = ventaDTO.IdUsuario;
             return venta;
         }
@@ -18,7 +18,7 @@ namespace CoderHouseProyectoFinal.Mapper
         {
             VentumDTO ventaDTO = new VentumDTO();
             ventaDTO.Comentarios=venta.Comentarios;
-            ventaDTO.Id=venta.Id;
+            ventaDTO.Id=null;
             ventaDTO.IdUsuario =venta.IdUsuario;
             return ventaDTO;
         }

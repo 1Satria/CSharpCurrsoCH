@@ -10,7 +10,7 @@ namespace CoderHouseProyectoFinal.Mapper
         {
             ProductoVendido prodVendido = new ProductoVendido();
             prodVendido.IdProducto = prodVendidoDTO.IdProducto;
-            prodVendido.Id = prodVendidoDTO.Id;
+            prodVendido.Id = null;
             prodVendido.IdVenta = prodVendidoDTO.IdVenta;
             prodVendido.Stock = prodVendidoDTO.Stock;
             return prodVendido;
@@ -19,8 +19,8 @@ namespace CoderHouseProyectoFinal.Mapper
         {
             ProductoVendidoDTO prodVendidoDTO = new ProductoVendidoDTO();
             prodVendidoDTO.IdProducto = prodVendido.IdProducto;
-            prodVendidoDTO.Id = prodVendido.Id;
-            prodVendidoDTO.Id = prodVendido.IdVenta;
+            prodVendidoDTO.Id = null;
+            prodVendidoDTO.IdVenta = prodVendido.IdVenta;
             prodVendidoDTO.Stock = prodVendido.Stock;
             
             return prodVendidoDTO;

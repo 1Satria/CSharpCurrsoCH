@@ -13,7 +13,6 @@ namespace CoderHouseProyectoFinal.Mapper
             productoDTO.Costo = prod.Costo;
             productoDTO.Stock = prod.Stock;
             productoDTO.IdUsuario = prod.IdUsuario;
-            productoDTO.Id = prod.Id;
             return productoDTO;
         }
         public static Producto MappearAProducto(ProductoDTO productoDTO) 
@@ -24,7 +23,6 @@ namespace CoderHouseProyectoFinal.Mapper
             producto.Costo = productoDTO.Costo;
             producto.Stock= productoDTO.Stock;
             producto.IdUsuario= productoDTO.IdUsuario;
-            producto.Id = productoDTO.Id;
             return producto;
         } 
     }

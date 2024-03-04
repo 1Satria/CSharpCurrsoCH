@@ -10,7 +10,7 @@ namespace CoderHouseProyectoFinal.models
             ProductoVendidos = new HashSet<ProductoVendido>();
         }
 
-        public long Id { get; set; }
+        public long? Id { get; set; }
         public string? Comentarios { get; set; }
         public long IdUsuario { get; set; }
 
