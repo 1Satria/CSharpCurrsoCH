@@ -41,9 +41,12 @@ namespace CoderHouseProyectoFinal.service
         {
             using (CoderContext context = new CoderContext())
             {
-                context.Usuarios.Add(v);
-                context.SaveChanges();
-                return true;
+                if (GetUserByUsername(v.NombreUsuario) == null)
+                {
+                    context.Usuarios.Add(v);
+                    context.SaveChanges();
+                    return true;
+                }
             }
             return false;
         }

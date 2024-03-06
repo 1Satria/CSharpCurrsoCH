@@ -40,7 +40,7 @@ namespace CoderHouseProyectoFinal.Controllers
             }
             else 
             {
-                return base.Conflict(new { Mensaje = "No se creo el usuario" });
+                return base.Conflict(new { Mensaje = "No se creo el usuario/Nombre de usuario en uso" });
             }
         }
         [HttpGet("{usuario}/{password}")]
